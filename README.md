@@ -5,7 +5,9 @@ http://jacobnlangley.com/angular/2016/05/03/angular-crud-app.html
 
 Live demo:  
 ~~http://jacobnlangley.bitbucket.org/ng-crud-app/~~
+
 https://peeps-a49af.firebaseapp.com  - angular 1 & firebase 2
+
 https://peep3-f7092.firebaseapp.com  - angular 1 & firebase 3
 
 to run locally:
