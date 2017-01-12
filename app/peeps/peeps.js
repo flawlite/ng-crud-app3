@@ -3,6 +3,14 @@
 angular.module('myPeeps.peeps', ['ngRoute', 'firebase'])
 
 .config(['$routeProvider', function($routeProvider) {
+  // Initialize Firebase
+  var config = {
+    apiKey: PRIVATE.firebase_api,
+    authDomain: "peep3-f7092.firebaseapp.com",
+    databaseURL: "https://peep3-f7092.firebaseio.com"
+  };
+  firebase.initializeApp(config);
+
   $routeProvider.when('/peeps', {
     templateUrl: 'peeps/peeps.html',
     controller: 'PeepsCtrl'
@@ -13,7 +21,8 @@ angular.module('myPeeps.peeps', ['ngRoute', 'firebase'])
 //init Firebase
  //var fb2url='https://mypeepsapp.firebaseio.com/peeps';  // orig
  var fb2url='https://peep3-f7092.firebaseio.com/peeps';  // new
- var ref = new Firebase(fb2url);
+ //var ref = new Firebase(fb2url);
+  var ref = firebase.database().ref("peeps");
 
       $scope.msg = null;
  $scope.peeps = $firebaseArray(ref);
@@ -22,13 +31,11 @@ angular.module('myPeeps.peeps', ['ngRoute', 'firebase'])
  // Show Add Form
  $scope.showAddForm = function(){
  		$scope.addFormShow = true;
-    //$scope.peepShowIntro = true;
  }
 
   // Show Edit Form
   	$scope.showEditForm = function(peep){
   		$scope.editFormShow = true;
-      //$scope.peepShowIntro = true;
       $scope.peepShow = false;
       $scope.actions = true;
       // $scope.peepHide = true;
@@ -52,11 +59,12 @@ angular.module('myPeeps.peeps', ['ngRoute', 'firebase'])
  	// Hide Forms
  	$scope.hide = function(){
  		$scope.addFormShow = false;
-    $scope.editFormShow = false;
-    $scope.actions = false;
-    $scope.peepShow = false;
-    $scope.msg = null;
+  		$scope.editFormShow = false;
+  		$scope.actions = false;
+  		$scope.peepShow = false;
+  		$scope.msg = null;
  	}
+
   //Submit Peep
   $scope.addFormSubmit = function() {
     console.log('Adding Peep to contact list...');
@@ -93,7 +101,7 @@ angular.module('myPeeps.peeps', ['ngRoute', 'firebase'])
         }
       ]
     }).then(function(ref){
-      var id = ref.key();
+      var id = ref.key; // v3
       console.log('Added Peep with ID: '+id);
       //Clear form fields
       clearFields();

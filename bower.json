@@ -11,8 +11,8 @@
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
     "html5-boilerplate": "~5.2.0",
-    "firebase": "2.4.2",
-    "angularfire": "1.2.0",
+    "firebase": "^3.6.5",
+    "angularfire": "^2.2.0",
     "fastclick": "^1.0.6",
     "foundation": "^5.5.3",
     "ngAnimate": "*"
