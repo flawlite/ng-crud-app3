@@ -19,7 +19,7 @@ to run unit tests:
 ```
 ```
 
-to ruun e2e tests:
+to run e2e tests:
 ```
 ```
 
