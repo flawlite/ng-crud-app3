@@ -17,10 +17,12 @@ npm start
 
 to run unit tests:
 ```
+npm run-script test-single-run
 ```
 
 to run e2e tests:
 ```
+npm run-script protractor
 ```
 
 Released under the [MIT License] (http://opensource.org/licenses/MIT)
