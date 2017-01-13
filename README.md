@@ -1,4 +1,4 @@
-Angular1 / Firebase3 CRUD ( Not a TODO ) App
+Angular1 / Firebase3 CRUD with Auth ( Not a TODO ) App
 
 original page:  
 http://jacobnlangley.com/angular/2016/05/03/angular-crud-app.html
@@ -9,6 +9,8 @@ Live demo:
 https://peeps-a49af.firebaseapp.com  - angular 1 & firebase 2
 
 https://peep3-f7092.firebaseapp.com  - angular 1 & firebase 3
+
+https://peep3auth.firebaseapp.com  - angular 1 & firebase 3 with Auth
 
 to run locally:
 ```
