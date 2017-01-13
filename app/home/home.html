@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="small-12 large-10 columns">
+    <h3>Home</h3>
+  </div>
+</div>
+<div class="row">
+	<div class="small-12 medium-6 columns">
+
+<p class="status good" ng-show="loggedIn">Hello! You are logged in with id {{user.uid}}.</p>
+<p class="status" ng-hide="loggedIn">Welcome. You are not <a href="#/login">logged in</a></p>
+
+<span>
+	<input ng-model="syncedValue.$value" type="text" ng-change="syncedValue.$save()" /> <b>{{syncedValue.$value}}</b>
+</span>
+
+<p>You can read peeps witout logging in, but will need to register and login to write or update/delete peeps.</p>
+
+<p>All source code at <a ng-href="https://github.com/mkobar/ng-crud-app3/" target="_blank">GitHub</a>. Enjoy. </p>
+</div>
+</div>
+
+
