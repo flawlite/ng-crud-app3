@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="small-12 large-10 columns">
+    <h3>Login</h3>
+  </div>
+</div>
+<div class="row">
+<div class="small-12 medium-6 columns">
+<form>
+    <label>
+        <span>email</span>
+        <input type="email" ng-model="email" placehloder="email"/>
+    </label>
+    <label>
+        <span>password</span>
+        <input type="password" ng-model="pass" placehloder="password"/>
+    </label>
+    <label ng-cloak ng-show="createMode">
+        <span>confirm pass</span>
+        <input type="password" ng-model="confirm" />
+    </label>
+    <button ng-click="login(email, pass)" ng-hide="createMode">Log In</button>
+    <button ng-click="createMode = true" ng-hide="createMode">Register</button>
+    <button ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
+    <button ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
+
+    <p ng-show="err" class="error">{{err}}</p>
+</form>
+</div>
+</div>
