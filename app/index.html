@@ -6,18 +6,30 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Angular1 / Firebase3 CRUD App</title>
+  <title>Angular1 / Firebase3 Auth CRUD App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
-  <link rel="stylesheet" href="app.css">
+
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css"/>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+<!--
 <body ng-app="myPeepsApp">
+	-->
+<body ng-cloak>
   <div class="container" ng-controller="PeepsCtrl">
     <div class="row">
       <div class="medium-12 large-12 columns">
-        <h2>MY PEEPS ~ Angular1 / Firebase3 CRUD App</h2>
-          <hr>
+	      <h2>MY PEEPS ~ Angular1 / Firebase3 Auth CRUD App</h2>
+	        <ul class="menu">
+    <li><a href="#/home">home</a></li>
+    <li><a href="#/peeps">peeps</a></li>
+    <li ng-hide="loggedIn"><a href="#/login">login</a></li>
+    <li ng-show="loggedIn"><a href="#/account">account</a></li>
+  </ul>
       </div>
     </div>
 
@@ -30,6 +42,8 @@
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  <script src="//cdn.firebase.com/js/client/3.6.x/firebase.js"></script>
+<script src="//cdn.firebase.com/libs/angularfire/2.0.x/angularfire.min.js"></script>
   -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -37,8 +51,21 @@
   <script src="bower_components/firebase/firebase.js"></script>
   <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
   <script src="bower_components/foundation/js/foundation.min.js"></script>
+
   <script src="private.js"></script>
+
   <script src="app.js"></script>
+  <script src="config.js"></script>
+
+  <script src="components/appversion/appversion-directive.js"></script>
+  <script src="components/ngcloak/ngcloak-decorator.js"></script>
+  <script src="components/reverse/reverse-filter.js"></script>
+  <script src="components/security/security.js"></script>
+  <script src="components/auth/auth.js"></script>
+
+  <script src="home/home.js"></script>
+  <script src="account/account.js"></script>
+  <script src="login/login.js"></script>
   <script src="peeps/peeps.js"></script>
 </body>
 </html>
