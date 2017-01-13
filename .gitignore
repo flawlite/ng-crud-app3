@@ -9,3 +9,4 @@ bower_components
 *.md~
 /app/private.js
 npm-debug.log
+*.css~
