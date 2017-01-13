@@ -3,14 +3,6 @@
 angular.module('myPeeps.peeps', ['ngRoute', 'firebase'])
 
 .config(['$routeProvider', function($routeProvider) {
-  // Initialize Firebase
-  var config = {
-    apiKey: PRIVATE.firebase_api,
-    authDomain: "peep3-f7092.firebaseapp.com",
-    databaseURL: "https://peep3-f7092.firebaseio.com"
-  };
-  firebase.initializeApp(config);
-
   $routeProvider.when('/peeps', {
     templateUrl: 'peeps/peeps.html',
     controller: 'PeepsCtrl'
@@ -19,9 +11,6 @@ angular.module('myPeeps.peeps', ['ngRoute', 'firebase'])
 
 .controller('PeepsCtrl', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
 //init Firebase
- //var fb2url='https://mypeepsapp.firebaseio.com/peeps';  // orig
- var fb2url='https://peep3-f7092.firebaseio.com/peeps';  // new
- //var ref = new Firebase(fb2url);
   var ref = firebase.database().ref("peeps");
 
       $scope.msg = null;
